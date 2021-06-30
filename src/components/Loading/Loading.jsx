@@ -4,7 +4,7 @@ const Loading = () => {
     return (
     <Wrapper>
      <Loader/>
-     <h1>Getting things ready for you! Please wait a second =)</h1> 
+     <h1>Art is loading! Please wait a second =)</h1> 
      </Wrapper>
     )
 } 

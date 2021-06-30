@@ -10,6 +10,11 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 
+.avatar{
+    border-radius: 100px;
+    margin-left: -2rem;
+    margin-right: 2rem;
+}
 
 img{
     width: 50px;
@@ -28,11 +33,8 @@ h3{
 }
 
 &:last-child{
-
     margin-right: 1.5rem;
- 
-    
-}
+ }
 
 `
 
