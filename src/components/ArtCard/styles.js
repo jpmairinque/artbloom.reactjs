@@ -29,6 +29,10 @@ h1{
     margin-bottom: 0.5rem;
 }
 
+p{
+    font-style: italic;
+}
+
 &:hover{
     ${TextCardWrapper}{
         position: absolute;
