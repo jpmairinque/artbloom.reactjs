@@ -28,6 +28,18 @@ const fetchSingleArt = async(id) =>{
 
 
 }
+const fetchDeleteSingleArt = async(id) =>{
+    const resp = await fetch(
+        `https://collectionapi.metmuseum.org/public/collection/v1/objects/${id}`
+      );
+      const data = await resp.json();
+    setFavoritesToRender(favoritesToRender.filter((art) => art.objectID !== data.objectID))
+
+
+}
+
+
+
 
     const fetchArts = async () => {
     
@@ -62,7 +74,7 @@ const fetchSingleArt = async(id) =>{
     }
 
     return (
-        <FavoritesContext.Provider value={{favorites,setFavorites, loadData, fetchArts, favoritesToRender,fetchSingleArt,isLoadingFavorites}}>
+        <FavoritesContext.Provider value={{favorites,setFavorites, loadData, fetchArts, favoritesToRender,fetchSingleArt,isLoadingFavorites,fetchDeleteSingleArt}}>
             {props.children}
         </FavoritesContext.Provider>
     )
