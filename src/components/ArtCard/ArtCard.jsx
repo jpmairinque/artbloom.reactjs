@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { FavoritesContext } from "../../contexts/FavoritesContext";
 import { database } from '../../services/firebase'
 import { AuthContext } from '../../contexts/AuthContext'
@@ -7,10 +7,9 @@ import { AuthContext } from '../../contexts/AuthContext'
 
 const ArtCard = (props) => {
 
-    const { loadData, fetchSingleArt , favorites } = useContext(FavoritesContext);
+    const { loadData, fetchSingleArt , favorites, isFavorite, setIsFavorite } = useContext(FavoritesContext);
     const { user } = useContext(AuthContext);
-    const [isFavorite,setIsFavorite] = useState(false)
-   
+  
 
     const handleNewFave = async (fav)=>{
 
@@ -31,11 +30,12 @@ const ArtCard = (props) => {
                 <p>{props.art.artistDisplayName}</p>
                 </div>
                 <S.ButtonWrapper>
-                {!isFavorite ? (<S.Button
+                {!isFavorite.includes(props.art.objectID) ? (<S.Button
                     id={props.art.objectID} 
-                    onClick={(e)=>{handleNewFave(e.target.id); setIsFavorite(true)}}
+                    onClick={(e)=>{handleNewFave(e.target.id); setIsFavorite([...isFavorite, props.art.objectID])}}
                     >Add to favorites
-                </S.Button>):"Added to favorites!"}
+                </S.Button>)
+                :"Added to favorites!"}
                 <S.Button
                     onClick={()=>{window.open(`https://www.metmuseum.org/art/collection/search/${props.art.objectID}`, '_blank')}}
                     >Learn more

@@ -13,6 +13,7 @@ const FavoritesContextProvider = (props) => {
   const [favorites, setFavorites] = useState([]);
   const [favoritesToRender, setFavoritesToRender] = useState([]);
   const [isLoadingFavorites, setIsLoadingFavorites] = useState(true);
+  const [isFavorite,setIsFavorite] = useState([])
 
   // fetches only the card clicked and sends it to render
   const fetchSingleArt = async (id) => {
@@ -74,6 +75,8 @@ const FavoritesContextProvider = (props) => {
         fetchSingleArt,
         isLoadingFavorites,
         fetchDeleteSingleArt,
+        isFavorite,
+        setIsFavorite
       }}
     >
       {props.children}

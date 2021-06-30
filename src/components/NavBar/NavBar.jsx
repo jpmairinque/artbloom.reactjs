@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { auth } from "../../services/firebase";
-import { useHistory } from "react-router";
+import { useHistory, useLocation } from "react-router";
 
 import {AiOutlineReload, AiOutlineLogout} from "react-icons/ai"
 import Flower from "../../assets/cil_flower.svg";
@@ -11,6 +11,7 @@ const NavBar = (props) => {
 
   const {user} = useContext(AuthContext)
   const history = useHistory()
+  const location = useLocation()
 
   const signOutApp = async () => {
     await auth.signOut().then(() => {
