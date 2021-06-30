@@ -1,6 +1,8 @@
 import {
-
+  BrowserRouter as Router,
   Route,
+  Redirect,
+  Switch,
   
 } from "react-router-dom";
 
@@ -40,11 +42,16 @@ const showArt = async () => {
 
 
   return (
-    <div>
+   <Router>
         <NavBar showArt={showArt} setLoading={setLoading}/>
-        {location.pathname==="/favorites" ? <Favorites/> : (loading ? <Loading/> : <ArtsList arts={arts}/>)}
+        <Route path="/home/main">
+        {loading ? <Loading/> : <ArtsList arts={arts}/>}
+        </Route>
+        <Route path="/home/favorites">
+       <Favorites/>
+        </Route>
  
-    </div>
+    </Router>
   );
 };
 

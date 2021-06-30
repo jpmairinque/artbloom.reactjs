@@ -12,7 +12,7 @@ const Login = () => {
         await signInWithGoogle()
      }
      console.log(user)
-      history.push("/home");
+      history.push("/home/main");
     };
    
  

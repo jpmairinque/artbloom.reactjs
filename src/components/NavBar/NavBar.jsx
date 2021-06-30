@@ -18,12 +18,11 @@ const NavBar = (props) => {
 
     const signOutApp = async () => {
      await auth.signOut().then(() => {
+      window.location.reload();
         console.log(  "deuuuuu")
       }).catch((error) => {
       console.log('nnn deu')
-      })
-
-      
+      })     
 
      
     }
@@ -32,7 +31,7 @@ const NavBar = (props) => {
 
   return (
     <S.Nav>
-     <S.LogoWrapper onClick={()=>{history.push('/home')}}>
+     <S.LogoWrapper onClick={()=>{history.push('/home/main')}}>
         <img src={Flower} />
         <h1>ARTBLOOM</h1>
     </S.LogoWrapper>
@@ -42,7 +41,7 @@ const NavBar = (props) => {
     <BsSearch color="white" size={40}/>
     </S.FlexWrapper>
       <S.FlexWrapper>     
-      <h3 onClick={()=>{history.push("/favorites")}}>FAVORITES</h3>
+      <h3 onClick={()=>{history.push("/home/favorites")}}>FAVORITES</h3>
       <h3>{user.name}</h3>
       <img src={user.avatar} className="avatar" />
       <h3 onClick={()=>{signOutApp()  }}>sair</h3>
