@@ -1,39 +1,31 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
-import { database } from "../../services/firebase";
-import { useContext } from "react";
+import { useEffect, useContext } from "react";
 import { FavoritesContext } from "../../contexts/FavoritesContext";
 import { ArtsWrapper } from "../../components/ArtsList/styles";
+
 import FavoriteCard from "../../components/ArtCard/FavoriteCard";
 import Loading from "../../components/Loading/Loading";
 
-
 const Favorites = () => {
 
-  const {fetchArts, favoritesToRender, isLoadingFavorites} = useContext(FavoritesContext);
-  
- 
-  
-
-  
+  const { fetchArts, favoritesToRender, isLoadingFavorites } = useContext(FavoritesContext);
 
   useEffect(() => {
-
-  fetchArts() 
-   
- 
+    fetchArts();
   }, []);
 
-
-
+  // if API fetch is loading, Favorites will render Loading component; else, it loads the favorite cards
   return (
-
-<>
-
-  {isLoadingFavorites ? <Loading/>:(<ArtsWrapper>{favoritesToRender.map((art, index) => (<FavoriteCard key={index} art={art}/>))} </ArtsWrapper>)}
-       </>
-
+    <>
+      {isLoadingFavorites ? (
+        <Loading />
+      ) : (
+        <ArtsWrapper>
+          {favoritesToRender.map((art, index) => (
+            <FavoriteCard key={index} art={art} />
+          ))}{" "}
+        </ArtsWrapper>
+      )}
+    </>
   );
 };
 

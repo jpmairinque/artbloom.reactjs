@@ -1,3 +1,5 @@
+import { AuthContext } from "./contexts/AuthContext";
+import { useContext } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -5,39 +7,27 @@ import {
   Switch,
 } from "react-router-dom";
 
-import AuthContextProvider from "./contexts/AuthContext";
+import FavoritesContextProvider from "./contexts/FavoritesContext";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
-import FavoritesContextProvider from "./contexts/FavoritesContext";
-import Favorites from "./pages/Favorites/Favorites";
-import { useContext } from "react";
-import { AuthContext } from "./contexts/AuthContext";
-
 
 const Routes = () => {
 
+  const {user} = useContext(AuthContext) // catching up user to set a private route
 
-  const {user} = useContext(AuthContext)
-
-  return (
-
-    
+  return (    
     
     <Router>
-     
-    <FavoritesContextProvider>
-      
+      <FavoritesContextProvider>
+
         <Switch>
           <Route exact path="/" component={Login} />
-          <Route path="/home">
+          <Route path="/home"> 
             {!user ? <Redirect to="/"/> : <Home/>}
           </Route>
-          
-        
         </Switch>
-        </FavoritesContextProvider>
- 
-  
+
+      </FavoritesContextProvider>
     </Router>
    
   );

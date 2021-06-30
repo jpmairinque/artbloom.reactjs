@@ -1,51 +1,42 @@
-import * as S from "./styles";
-import Flower from "../../assets/cil_flower.svg";
-import { useHistory } from "react-router";
-import {BsSearch} from "react-icons/bs"
-import {AiOutlineReload} from "react-icons/ai"
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { auth } from "../../services/firebase";
-import { Redirect } from "react-router";
+import { useHistory } from "react-router";
 
+import {AiOutlineReload, AiOutlineLogout} from "react-icons/ai"
+import Flower from "../../assets/cil_flower.svg";
+import * as S from "./styles";
 
 const NavBar = (props) => {
 
-    const {user} = useContext(AuthContext)
+  const {user} = useContext(AuthContext)
+  const history = useHistory()
 
-
-    const history = useHistory()
-
-    const signOutApp = async () => {
-     await auth.signOut().then(() => {
-      window.location.reload();
-        console.log(  "deuuuuu")
-      }).catch((error) => {
-      console.log('nnn deu')
-      })     
-
-     
-    }
- 
-
+  const signOutApp = async () => {
+    await auth.signOut().then(() => {
+    window.location.reload();
+      console.log("Sucessfully logged out")
+    }).catch((error) => {
+    console.log('Something went wrong')
+    })        
+  }
 
   return (
     <S.Nav>
      <S.LogoWrapper onClick={()=>{history.push('/home/main')}}>
         <img src={Flower} />
         <h1>ARTBLOOM</h1>
-    </S.LogoWrapper>
+     </S.LogoWrapper>
 
-    <S.FlexWrapper>
-    <AiOutlineReload color="white" size={50} onClick={()=>{props.showArt(); props.setLoading(true)}}/> 
-    <BsSearch color="white" size={40}/>
-    </S.FlexWrapper>
+      <S.FlexWrapper>
+        <AiOutlineReload color="white" size={50} onClick={()=>{props.showArt(); props.setLoading(true)}}/> 
+      </S.FlexWrapper>
+
       <S.FlexWrapper>     
-      <h3 onClick={()=>{history.push("/home/favorites")}}>FAVORITES</h3>
-      <h3>{user.name}</h3>
-      <img src={user.avatar} className="avatar" />
-      <h3 onClick={()=>{signOutApp()  }}>sair</h3>
-      
+        <h3 onClick={()=>{history.push("/home/favorites")}}>FAVORITES</h3>
+        <h3>{user.name}</h3>
+        <img src={user.avatar} className="avatar" />
+        <AiOutlineLogout size={50} color="white" onClick={()=>{signOutApp()}}/>
       </S.FlexWrapper>
     </S.Nav>
   );

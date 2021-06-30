@@ -3,11 +3,7 @@ import styled from "styled-components";
 export const TextCardWrapper = styled.div`
   color: white;
   display: none;
-  margin-bottom: 4rem;
-  max-width:80%;
-
-
-
+  max-width: 80%;
 `;
 
 export const CardWrapper = styled.div`
@@ -15,12 +11,10 @@ position: relative;
 width: 300px;
 display: flex;
 flex-direction: column;
-justify-content: flex-end;
+justify-content: center;
 align-items: center;
 transition: 0.3s;     
 margin: 2rem;
-
-   
 
 img{
     transition: 0.5s;
@@ -29,20 +23,51 @@ img{
     object-fit: cover;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-   
+}
+
+h1{
+    margin-bottom: 0.5rem;
 }
 
 &:hover{
     ${TextCardWrapper}{
         position: absolute;
-        display: block;        
+        width: 100%;
+        height: 100%;
+        display: flex;        
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
         text-align: center;
     }
     img{filter:brightness(20%)}
     }
 
+`;
 
-}`
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+`;
 
+export const Button = styled.button`
+  color: white;
+  font-size: 1rem;
+  width: 90%;
+  background-color: transparent;
+  padding: 0.5rem;
+  border: solid white 1px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.5s;
+  margin-top: 1rem;
 
-
+  &:hover {
+    color: black;
+    background-color: white;
+  }
+`;
