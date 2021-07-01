@@ -3,6 +3,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { auth } from "../../services/firebase";
 import { useHistory} from "react-router";
 
+import {FaHeart} from "react-icons/fa"
 import {AiOutlineReload, AiOutlineLogout} from "react-icons/ai"
 import Flower from "../../assets/cil_flower.svg";
 import * as S from "./styles";
@@ -22,6 +23,7 @@ const NavBar = (props) => {
   }
 
   return (
+    <>
     <S.Nav>
      <S.LogoWrapper onClick={()=>{history.push('/home/main')}}>
         <img src={Flower} alt=""/>
@@ -39,6 +41,22 @@ const NavBar = (props) => {
         <AiOutlineLogout alt="" size={50} color="white" onClick={()=>{signOutApp()}}/>
       </S.FlexWrapper>
     </S.Nav>
+
+    <S.NavMobile>
+      <img src={user.avatar} className="avatar" />
+      <S.LogoWrapper onClick={()=>{history.push('/home/main')}}>
+        <img src={Flower} alt=""/>
+        <h1>ARTBLOOM</h1>
+     </S.LogoWrapper>
+      <S.FlexWrapper>
+        <AiOutlineReload color="white" size={45} onClick={()=>{props.showArt(); props.setLoading(true)}}/> 
+        <FaHeart color="white" size={45} onClick={()=>{history.push("/home/favorites")}} />
+         <AiOutlineLogout alt="" size={45} color="white" onClick={()=>{signOutApp()}}/>
+      </S.FlexWrapper>
+     
+    </S.NavMobile>
+</>
+
   );
 };
 

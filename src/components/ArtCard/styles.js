@@ -1,4 +1,4 @@
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export const GoUpAnimation = keyframes`
 from { transform: translateY(10px) }
@@ -9,50 +9,53 @@ export const TextCardWrapper = styled.div`
   color: white;
   display: none;
   max-width: 80%;
+  cursor: default;
 `;
 
 export const CardWrapper = styled.div`
-position: relative;
-width: 300px;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-transition: 0.3s; 
-animation: ${GoUpAnimation} 0.5s;    
-margin: 2rem;
+  position: relative;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  animation: ${GoUpAnimation} 0.5s;
+  margin: 2rem;
 
-img{
+  img {
     transition: 0.5s;
     width: 300px;
     height: 400px;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
+  }
 
-h1{
+  h1 {
     margin-bottom: 0.5rem;
-}
+  }
 
-p{
+  p {
     font-style: italic;
-}
+  }
 
-&:hover{
-    ${TextCardWrapper}{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;        
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        text-align: center;
+  &:hover {
+    transform: scale(1.02);
+    ${TextCardWrapper} {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      text-align: center;
     }
-    img{filter:brightness(20%)}
+    img {
+      filter: brightness(20%);
     }
-
+  }
 `;
 
 export const ButtonWrapper = styled.div`

@@ -8,8 +8,9 @@ position: relative;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  height: 660px;
-  width: 660px;
+  width: 35%;
+  height: 70%;
+
   background-color: #49493c;
   border-radius: 20px;
   box-shadow: 10.0026px 13.3368px 16px rgba(0, 0, 0, 0.25);
@@ -30,6 +31,7 @@ position: relative;
 export const FlexWrapper = styled.div`
   
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,13 +39,6 @@ export const FlexWrapper = styled.div`
 
 `;
 
-export const Balls = styled.img`
-    display: block;
-    position: absolute;
-    top: -150px;
-    right:-250px ;
-    
-`;
 
 export const Flower = styled.img`
     

@@ -31,8 +31,8 @@ const Home = () => {
     <Router>
       <NavBar showArt={showArt} setLoading={setLoading} />
       <Route path="/home/main">
-        {loading && <Loading />} 
-        <ArtsList arts={arts} />
+        {loading ? <Loading /> : <ArtsList arts={arts} />} 
+        
       </Route>
       <Route path="/home/favorites">
         <Favorites />

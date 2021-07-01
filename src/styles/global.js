@@ -13,11 +13,11 @@ const GlobalStyle = createGlobalStyle`
     width: 10px;
     } 
     ::-webkit-scrollbar-track {
-    background-color: grey;
+    background-color:#b5b5a7;
     border-radius: 40px;
     }
     ::-webkit-scrollbar-thumb {
-      background: #9b98ee;
+      background: #3d3d38;
       border-radius: 40px;
     }
   }
@@ -30,10 +30,12 @@ nav{
 body,html {    
 background:linear-gradient(to right, #dad299, #b0dab9);
 height: 100%;
+
 }
 
 #root{
   height: 100vh;
+  
 }
 `
 
