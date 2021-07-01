@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { auth } from "../../services/firebase";
-import { useHistory, useLocation } from "react-router";
+import { useHistory} from "react-router";
 
 import {AiOutlineReload, AiOutlineLogout} from "react-icons/ai"
 import Flower from "../../assets/cil_flower.svg";
@@ -11,7 +11,6 @@ const NavBar = (props) => {
 
   const {user} = useContext(AuthContext)
   const history = useHistory()
-  const location = useLocation()
 
   const signOutApp = async () => {
     await auth.signOut().then(() => {
@@ -25,7 +24,7 @@ const NavBar = (props) => {
   return (
     <S.Nav>
      <S.LogoWrapper onClick={()=>{history.push('/home/main')}}>
-        <img src={Flower} />
+        <img src={Flower} alt=""/>
         <h1>ARTBLOOM</h1>
      </S.LogoWrapper>
 
@@ -37,7 +36,7 @@ const NavBar = (props) => {
         <h3 onClick={()=>{history.push("/home/favorites")}}>FAVORITES</h3>
         <h3>{user.name}</h3>
         <img src={user.avatar} className="avatar" />
-        <AiOutlineLogout size={50} color="white" onClick={()=>{signOutApp()}}/>
+        <AiOutlineLogout alt="" size={50} color="white" onClick={()=>{signOutApp()}}/>
       </S.FlexWrapper>
     </S.Nav>
   );

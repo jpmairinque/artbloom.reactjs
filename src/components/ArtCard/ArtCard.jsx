@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { useContext, useEffect, useState } from 'react'
+import { useContext} from 'react'
 import { FavoritesContext } from "../../contexts/FavoritesContext";
 import { database } from '../../services/firebase'
 import { AuthContext } from '../../contexts/AuthContext'

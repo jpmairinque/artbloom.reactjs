@@ -1,4 +1,9 @@
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+
+export const GoUpAnimation = keyframes`
+from { transform: translateY(10px) }
+  to { transform: translateY(0px) }
+`;
 
 export const TextCardWrapper = styled.div`
   color: white;
@@ -13,7 +18,8 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-transition: 0.3s;     
+transition: 0.3s; 
+animation: ${GoUpAnimation} 0.5s;    
 margin: 2rem;
 
 img{

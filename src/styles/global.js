@@ -32,6 +32,9 @@ background:linear-gradient(to right, #dad299, #b0dab9);
 height: 100%;
 }
 
+#root{
+  height: 100vh;
+}
 `
 
 export default GlobalStyle;

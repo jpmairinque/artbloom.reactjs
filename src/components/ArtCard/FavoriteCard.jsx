@@ -17,12 +17,12 @@ const FavoriteCard = (props) => {
 
       if (dataArt == null) {return} // if there's no favorites, abort handle
            
-      Object.entries(dataArt).map(([key, value]) => { // delete the clicked card from database
+      Object.entries(dataArt).map(async([key, value]) => { // delete the clicked card from database
           if (value.fave == fav) {
             database.ref(`users/${user.id}/${key}`).remove();
 
             loadData(); // load new information from database
-            fetchDeleteSingleArt(fav); // fetch only the clicked card from the API & sets the new screenrendered cards
+            await fetchDeleteSingleArt(fav); // fetch only the clicked card from the API & sets the new screenrendered cards
           }
       });
     });

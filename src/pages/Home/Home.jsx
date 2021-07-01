@@ -15,9 +15,10 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [arts, setArts] = useState([]);
 
+
   const showArt = async () => {
     const artfetch = await fetchArt(); // fetching random art from API
-    setArts(artfetch);
+    setArts(artfetch.concat(arts));
     setLoading(false);
   };
 
@@ -30,7 +31,8 @@ const Home = () => {
     <Router>
       <NavBar showArt={showArt} setLoading={setLoading} />
       <Route path="/home/main">
-        {loading ? <Loading /> : <ArtsList arts={arts} />}
+        {loading && <Loading />} 
+        <ArtsList arts={arts} />
       </Route>
       <Route path="/home/favorites">
         <Favorites />

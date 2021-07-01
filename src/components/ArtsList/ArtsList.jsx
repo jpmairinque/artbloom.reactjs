@@ -1,6 +1,5 @@
 import ArtCard from "../ArtCard/ArtCard";
 import * as S from "./styles";
-import { useState } from "react";
 const ArtsList = (props) => {
 
   
