@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-position: relative;
-  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
   color: white;
   display: flex;
   flex-direction: column;
@@ -25,25 +24,29 @@ position: relative;
     font-size: 1.5rem;
   }
 
- 
+  @media (max-width: 1250px) {
+    width: 50%;
+
+    @media (max-width: 870px) {
+      width: 90%;
+      text-align: center;
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
 `;
 
 export const FlexWrapper = styled.div`
-  
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 `;
 
-
 export const Flower = styled.img`
-    
-  width:120px ;
-    
+  width: 120px;
 `;
 
 export const FlexColumn = styled.div`

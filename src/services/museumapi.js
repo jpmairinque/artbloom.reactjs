@@ -15,6 +15,4 @@ const fetchArt = async () => {
 
   return art;
 };
-
 export default fetchArt;
-

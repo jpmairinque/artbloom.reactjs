@@ -47,5 +47,12 @@ h1{
     
 }
 
+@media (max-width:1250px){
+
+h1{
+  display: none;
+}
+}
+
 
 `

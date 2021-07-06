@@ -1,8 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import fetchArt from "../../services/museumapi";
-
 import { FavoritesContext } from "../../contexts/FavoritesContext";
+import fetchArt from "../../services/museumapi";
 
 import ArtsList from "../../components/ArtsList/ArtsList";
 import NavBar from "../../components/NavBar/NavBar";
@@ -14,7 +13,6 @@ const Home = () => {
   const { loadData } = useContext(FavoritesContext);
   const [loading, setLoading] = useState(true);
   const [arts, setArts] = useState([]);
-
 
   const showArt = async () => {
     const artfetch = await fetchArt(); // fetching random art from API
@@ -31,8 +29,7 @@ const Home = () => {
     <Router>
       <NavBar showArt={showArt} setLoading={setLoading} />
       <Route path="/home/main">
-        {loading ? <Loading /> : <ArtsList arts={arts} />} 
-        
+        {loading ? <Loading /> : <ArtsList arts={arts} />}         
       </Route>
       <Route path="/home/favorites">
         <Favorites />

@@ -100,21 +100,22 @@ export const NavMobile = styled.nav`
       }
     }
     @media (max-width: 560px) {
-      .avatar{
+      .avatar {
         width: 50px !important;
         margin-left: 20px;
       }
       h1 {
         font-size: 1rem;
       }
-      img , svg{
+      img,
+      svg {
         width: 40px !important;
       }
       ${LogoWrapper} {
-      img {
-        display: none;
+        img {
+          display: none;
+        }
       }
-    }
     }
   }
 `;
