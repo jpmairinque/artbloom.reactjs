@@ -44,26 +44,12 @@ yarn start || npm start
 │   routes.jsx // rotas do app
 │
 ├───assets // imagens
-│       cil_flower.svg
-│       googleicons.svg
-│
+|
 ├───components // componentes utilizados
 │   ├───ArtCard
-│   │       ArtCard.jsx
-│   │       FavoriteCard.jsx
-│   │       styles.js
-│   │
 │   ├───ArtsList
-│   │       ArtsList.jsx
-│   │       styles.js
-│   │
 │   ├───Loading
-│   │       Loading.jsx
-│   │       styles.js
-│   │
 │   └───NavBar
-│           NavBar.jsx
-│           styles.js
 │
 ├───contexts // contextos utilizados
 │       AuthContext.jsx
@@ -71,23 +57,15 @@ yarn start || npm start
 │
 ├───pages // páginas do app
 │   ├───Favorites
-│   │       Favorites.jsx
-│   │       style.js
-│   │
 │   ├───Home
-│   │       Home.jsx
-│   │       styles.js
-│   │
 │   └───Login
-│           Login.jsx
-│           styles.js
 │
 ├───services // conexões externas
 │       firebase.js
 │       museumapi.js
 │
 └───styles // styled components global style
-        global.js
+
 ``` 
 ## Tools used / *ferramentas utilizadas* 🛠
 - React JS
