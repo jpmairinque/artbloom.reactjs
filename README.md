@@ -39,9 +39,9 @@ yarn start || npm start
 ```
 ## Project Structure / *estrutura do projeto* 🌳
 ```
-│   App.jsx
-│   index.jsx
-│   routes.jsx // rotas do app
+├───App.jsx
+├───index.jsx
+├───routes.jsx // rotas do app
 │
 ├───assets // imagens
 |
@@ -80,7 +80,7 @@ yarn start || npm start
 ### - Presenting landing page
 ![artbloomlanding](https://user-images.githubusercontent.com/53411709/125349276-b980df00-e333-11eb-9468-00c911eabd50.png)
 ##
-### - Login Page & HomePage
+### - Home Page & Login Page
 ![artbloomhome](https://user-images.githubusercontent.com/53411709/125350174-c5b96c00-e334-11eb-9278-44d98a77e403.png)
 ## 
 ![artbloomlogin](https://user-images.githubusercontent.com/53411709/125350185-ca7e2000-e334-11eb-88f6-d10d097ee0c8.png)
