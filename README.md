@@ -3,7 +3,7 @@ The app is an art researcher that consumes the **Metropolitan Museum of Art (MET
 
 *// A aplicação busca por artes aleatórias consumindo a api do MET Museum e renderizando-as na UI. O usuário logado pode favoritar as obras e ainda clicar para ser redirecionado à página da arte no website do MET. =)*
 
-<a href="https://artbloom-4c482.web.app/" target="_blank"><img align="center" alt="Open Artbloom"  src="https://img.shields.io/badge/open%20app-D6D494?style=for-the-badge"></a>
+<a href="https://artbloom-4c482.web.app/" target="_blank"><img  alt="Open Artbloom"  src="https://img.shields.io/badge/open%20app-D6D494?style=for-the-badge"></a>
 ## App Overview // *overview da aplicação* 💻
 
 ![](src/assets/gifartbloom.gif)
