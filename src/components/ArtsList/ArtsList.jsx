@@ -6,7 +6,7 @@ const ArtsList = (props) => {
   return (
     <S.ArtsWrapper>
       {props.arts.map((art, index) => (
-        <ArtCard data-testid="artcard" key={index} art={art} />
+        <ArtCard key={index} art={art} />
       ))}
     </S.ArtsWrapper>
   );
