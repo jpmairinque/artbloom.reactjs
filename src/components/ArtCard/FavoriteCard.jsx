@@ -22,7 +22,7 @@ const FavoriteCard = (props) => {
             database.ref(`users/${user.id}/${key}`).remove();
 
             loadData(); // load new information from database
-            await fetchDeleteSingleArt(fav); // fetch only the clicked card from the API & sets the new screenrendered cards
+            await fetchDeleteSingleArt(fav); // fetches only the clicked card from the API & sets the new screenrendered cards
           }
       });
     });
