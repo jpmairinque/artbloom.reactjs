@@ -1,7 +1,7 @@
 # Artbloom 🖼✒
 The app is an art researcher that consumes the **Metropolitan Museum of Art (MET)** [api](https://metmuseum.github.io/) and renders random artworks to the UI. Those arts can be saved as favorites by the logged user, and he or she can even learn more about them by clicking and being redirected to the artwork's page on MET's website.
 
-*// A aplicação busca por artes aleatórias consumindo a api do MET Museum e renderizando-as na UI. O usuário logado pode favoritar as obras e ainda clicar para ser redirecionado à página da arte no website do MET. =)*
+*// A aplicação busca por artes aleatórias consumindo a api do MET Museum e renderizando-as na UI. O usuário logado pode favoritar as obras e ainda clicar para ser redirecionado à página da arte no website do MET.*
 
 <a href="https://artbloom-4c482.web.app/" target="_blank"><img  alt="Open Artbloom"  src="https://img.shields.io/badge/open%20app-D6D494?style=for-the-badge"></a>
 ## App Overview // *overview da aplicação* 💻
